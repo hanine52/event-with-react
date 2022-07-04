@@ -1,5 +1,6 @@
 import cuid from 'cuid';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Form, Segment, Header } from 'semantic-ui-react';
 
 export default function EventForm({setFormOpen, setEvents, createEvent, selectedEvent, updateEvent}) {
@@ -17,13 +18,7 @@ export default function EventForm({setFormOpen, setEvents, createEvent, selected
     const { name, value } = e.target;
     setValues({...values, [name]: value})
   }
-
-/*   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
-  const [description, setDescription] = useState('');
-  const [city, setCity] = useState('');
-  const [venue, setVenue] = useState('');
-  const [date, setDate] = useState(''); */
+  
   function handleFormSubmit() {
     selectedEvent 
     ? updateEvent({...selectedEvent, ...values}) 
@@ -52,13 +47,8 @@ export default function EventForm({setFormOpen, setEvents, createEvent, selected
         <Form.Field>
           <input type="date" placeholder="Date" />
         </Form.Field>
-        <Button
-          type="submit"
-          floated="right"
-          positive
-          content="Submit"
-        ></Button>
-        <Button onClick={() => setFormOpen(false)} type="submit" negative floated="right" content="Cancel"></Button>
+        <Button floated="right" positive content="Submit"></Button>
+        <Button as={Link} to='events' type="submit" negative floated="right" content="Cancel"></Button>
       </Form>
     </Segment>
   );
