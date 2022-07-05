@@ -2,8 +2,15 @@ import cuid from 'cuid';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, Segment, Header } from 'semantic-ui-react';
+import { useDispatch, useSelector } from "react-redux";
+import { updateEvent, createEvent } from '../eventActions';
 
-export default function EventForm({setFormOpen, setEvents, createEvent, selectedEvent, updateEvent}) {
+
+export default function EventForm({match, history}) {
+  const selectedEvent = useSelector(state => state.event.events.find(e => e.id === match.params.id));
+  const dispatch = useDispatch();
+
+
   const initialValues = selectedEvent ?? {
     title: '',
     category: '',
@@ -21,13 +28,13 @@ export default function EventForm({setFormOpen, setEvents, createEvent, selected
   
   function handleFormSubmit() {
     selectedEvent 
-    ? updateEvent({...selectedEvent, ...values}) 
-    : createEvent({...values, id: cuid(), hostedBy: 'Hanine', attendees: [], hostPhotoURL: '/assets/user.png'});
-    setFormOpen(false);
+    ? dispatch(updateEvent({...selectedEvent, ...values})) 
+    : dispatch(createEvent({...values, id: cuid(), hostedBy: 'Hanine', attendees: [], hostPhotoURL: '/assets/user.png'}));
+    history.push('/events');
   }
   return (
     <Segment clearing>
-      <Header content={selectedEvent ? 'Update the Event' : 'Create new Event'} />
+      <Header content={selectedEvent ? 'Edit the Event' : 'Create new Event'} />
       <Form onSubmit={handleFormSubmit}>
         <Form.Field>
           <input type="text" placeholder="Event title" name='title' value={values.title} onChange={(e) => handleInputChange(e)}/>
