@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/event-with-react/static/css/main.300d9935.chunk.css",
+    "main.js": "/event-with-react/static/js/main.d3109517.chunk.js",
+    "main.js.map": "/event-with-react/static/js/main.d3109517.chunk.js.map",
+    "runtime-main.js": "/event-with-react/static/js/runtime-main.1e8c621b.js",
+    "runtime-main.js.map": "/event-with-react/static/js/runtime-main.1e8c621b.js.map",
+    "static/css/2.27f3cf05.chunk.css": "/event-with-react/static/css/2.27f3cf05.chunk.css",
+    "static/js/2.b8dc42c4.chunk.js": "/event-with-react/static/js/2.b8dc42c4.chunk.js",
+    "static/js/2.b8dc42c4.chunk.js.map": "/event-with-react/static/js/2.b8dc42c4.chunk.js.map",
+    "index.html": "/event-with-react/index.html",
+    "precache-manifest.170bc4120a03edf811ab450d252aa5a7.js": "/event-with-react/precache-manifest.170bc4120a03edf811ab450d252aa5a7.js",
+    "service-worker.js": "/event-with-react/service-worker.js",
+    "static/css/2.27f3cf05.chunk.css.map": "/event-with-react/static/css/2.27f3cf05.chunk.css.map",
+    "static/css/main.300d9935.chunk.css.map": "/event-with-react/static/css/main.300d9935.chunk.css.map",
+    "static/js/2.b8dc42c4.chunk.js.LICENSE.txt": "/event-with-react/static/js/2.b8dc42c4.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/event-with-react/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e8c621b.js",
+    "static/css/2.27f3cf05.chunk.css",
+    "static/js/2.b8dc42c4.chunk.js",
+    "static/css/main.300d9935.chunk.css",
+    "static/js/main.d3109517.chunk.js"
+  ]
+}
